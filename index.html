@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,43 +15,17 @@
     <!--  CSS  -->
     <link rel="stylesheet" href="stylesmain.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <nav class="nav-main">
-            <!--<img src="img/Nerf imagen.jpg" alt="Imagen Nerf" class="nav-Nerf">-->
-            <ul class="nav-menu">
-                <li>
-                    <a href="#">Quienes somos?</a>
-                </li>
-                <li>
-                    <a href="LecturaN.html">Lectura de Numeros</a>
-                </li>
-                <li>
-                    <a href="#"></a>
-                </li>
-                <li>
-                    <a href="#"></a>
-                </li>
-                <li>
-                    <a href="#"></a>
-                </li>
-            </ul>
-            <ul class="nav-menu-right">
-                <li>
-                    <a href="#">
-                        <i class= "fas fa-cog"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="container" id="root">
         <hr>
         <div class="title">
             <h1>
                 Qué hemos hecho en nuestro TR?
             </h1>
         </div>
-        
+
         <!--  NERF  -->
         <header class="Principal">
             <h2 style="color: black;">Neural Radiance Fields</h2>
@@ -60,19 +35,19 @@
         <!--  Mas Info -->
         <div class="Extra">
             <div>
-                <img src="img/State-of-Art.png" alt="Info 1">
+                <img src="./rsc/State-of-Art.png" alt="Info 1">
                 <h3>Estado del Arte.</h3>
                 <p>Los avances relevantes en el area de la inteligencia artificial.</p>
                 <a href="StateOfArt.html">Descubrelo <i class="fas fa-angle-double-right"></i></a>
             </div>
             <div>
-                <img src="img/NN.png" alt="Info 2">
+                <img src="./rsc/NN.png" alt="Info 2">
                 <h3>Redes Neuronales.</h3>
                 <p>Las estructuras sobre las que se basa el aprendizaje automático.</p>
                 <a href="NN.html">Descubrelo <i class="fas fa-angle-double-right"></i></a>
             </div>
             <div>
-                <img src="img/Deep-Learning.png" alt="Info 3">
+                <img src="./rsc/Deep-Learning.png" alt="Info 3">
                 <h3>Algoritmos.</h3>
                 <p>Algoritmos utilizados para facilitar el entrenamiento de las redes neuronales.</p>
                 <a href="Algoritmos.html">Descubrelo <i class="fas fa-angle-double-right"></i></a>
@@ -83,7 +58,11 @@
     <!--  Scroll Reveal  -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!--  JavaScript  -->
-    <script src="main.js"></script>
+    <script src="./index.js"></script>
+    
+    <link rel="stylesheet" href="./menuNav.css">
+    <script src="./MenuNav.js"></script>
 
 </body>
+
 </html>
