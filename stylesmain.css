@@ -32,11 +32,11 @@ hr{
 }
 .container .title{
     font-size: 20px;
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
     position: relative;    
-    background: #39428996;
+    background: rgb(39, 94, 94);
     width: 100%;
     padding: 10px;
     transform: translateY(-10px);

@@ -2,12 +2,12 @@
 //////////  MAIN MENU COG  ///////////////
 const nav_menu = document.createElement("nav")
 document.getElementById("root").prepend(nav_menu)
-nav_menu.className = "menuNav-main"// "nav-main"
+nav_menu.className = "menuNav-main"
 
 //////////////  MENU PANEL  ///////////////
 const ul_menuPanel = document.createElement("ul")
 nav_menu.appendChild(ul_menuPanel)
-ul_menuPanel.className = "menuNav-panel" // "nav-menu"
+ul_menuPanel.className = "menuNav-panel"
 
 createMenuItem("Quienes somos?", "./index.html")
 createMenuItem("Lectura de Numeros", "./LecturaN.html")
@@ -25,7 +25,6 @@ function createMenuItem(name, href="#") {
 ///////////////   COG  ///////////////////
 const ul_menuCog = document.createElement("ul")
 nav_menu.appendChild(ul_menuCog)
-ul_menuCog.className = "menuNav-cog" // "nav-menu-right"
 ul_menuCog.onclick = () => ul_menuPanel.classList.toggle('show')
 
 const li_menuCog = document.createElement("li")
