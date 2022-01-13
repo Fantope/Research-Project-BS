@@ -1,0 +1,55 @@
+.menuNav-main {
+    font-size: 20px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30px;
+    padding: 15px 0;
+}
+
+.menuNav-main ul {
+    display: flex;
+}
+.menuNav-main ul li {
+    padding: 13px;
+}
+.menuNav-main ul li a {
+    padding: 8px;
+}
+
+/************  menuNav-panel *****************/
+
+.menuNav-panel{
+    display: block;
+    position: relative;    
+    background: #39428996;
+    width: 500px;
+    transform:translateY(-50px);
+    transition: transform .3s ease-in-out;
+}
+.menuNav-panel.show{
+    transform: translateY(0px);
+}
+
+.menuNav-panel a:hover{
+    border-bottom: 2px solid white;
+}
+.menuNav-panel-right{
+    position: relative;
+    cursor: pointer;
+    top: 5px;
+    z-index: 2;
+
+}
+.menuNav-panel-right a:hover{
+    opacity: .8;
+}
+
+.menuNav-main ul.menuNav-panel{
+    flex: 1;
+}
+
+/************ *****************/
+.menuNav-cog {
+	
+}
