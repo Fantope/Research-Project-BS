@@ -28,7 +28,7 @@
     border-top: 1px solid rgb(39, 94, 94);
     margin-bottom: -2px;
     width: 500px;
-    transform:translateY(-55px);
+    transform:translateY(-65px);
     transition: transform .3s ease-in-out;
 }
 .menuNav-panel.show{
