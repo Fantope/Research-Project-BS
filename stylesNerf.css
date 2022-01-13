@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: white;
+    background-color: #394289;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='48' viewBox='0 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='fancy-rectangles' fill='%234a2a7e' fill-opacity='0.45'%3E%3Cpath d='M6 12h6v12H6V12zm12 0h6v12h-6V12zm6-12h6v12h-6V0zM12 0h6v12h-6V0zm0 24h6v12h-6V24zM0 0h6v12H0V0zm6 36h6v12H6V36zm12 0h6v12h-6V36zm12-12h6v12h-6V24zM42 0h6v12h-6V0zm-6 12h6v12h-6V12zm12 0h6v12h-6V12zM36 36h6v12h-6V36zm12 0h6v12h-6V36zm-6-12h6v12h-6V24zm12 0h6v12h-6V24z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-size: 16px;
+    font-family: 'Gemunu Libre', sans-serif;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.container {
+    padding-top: 10px;
+    width: 90%;
+    margin: auto;
+}
+.nav{
+    font-size: 20px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30px;
+    padding: 15px;
+}
+.nav ul {
+    display: flex;
+}
+.nav ul li {
+    padding: 13px;
+}
+.nav ul li a {
+    padding: 8px;
+}
+/* "Animación del menu" */
+.nav-menu a:hover{
+    border-bottom: 2px solid white;
+}
+.nav-menu-right{
+    position: relative;
+    cursor: pointer;
+    top: 5px;
+    z-index: 2;
+
+}
+.nav-menu-right a:hover{
+    opacity: .8;
+}
+
+.nav ul.nav-menu{
+    flex: 1;
+}
+.Text{
+    margin-top: 10px;
+    font-size: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;    
+    width: 100%;
+    padding: 10px;
+}
+.nav-menu{
+    display: block;
+    position: relative;    
+    background: #39428996;
+    width: 500px;
+    transform:translateY(-50px);
+    transition: transform .3s ease-in-out;
+}
+.nav-menu.show{
+    transform: translateY(0px);
+}
+@media (max-width:700px){
+    
+    .nav ul.nav-menu{
+        display: block;
+        position: relative;    
+        background: rgba(40, 29, 139, 0.5);
+        width: 20%;
+        left:0;
+        top:0;
+        transform:translateY(0px);
+        transform:translateX(-300px);
+        transition: transform .3s ease-in-out;
+        width: 200px;
+        height: 100%;
+        position: absolute;
+        z-index: 3;
+        backdrop-filter: blur(7px);
+    }
+    .nav ul.nav-menu.show{
+        transform: translateX(0px);
+    }
+}
+.container .title{
+    font-size: 20px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;    
+    width: 90%;
+    padding: 10px;
+}
