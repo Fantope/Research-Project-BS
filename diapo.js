@@ -22,7 +22,7 @@ function getCurrentPanelIndex() {
 container.onclick = e => {
 	const panels = getPanels()
 	const currentPanelIndex = getCurrentPanelIndex()
-	if (panels.length == currentPanelIndex) {
+	if (panels.length == currentPanelIndex + 1) {
 		// Last panel
 	} else {
 		container.scrollLeft = panels[currentPanelIndex + 1].offsetLeft - container.offsetLeft
