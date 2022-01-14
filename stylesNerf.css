@@ -18,10 +18,24 @@ a{
 ul{
     list-style: none;
 }
-.container {
+
+.container .rect{
     padding-top: 10px;
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+    overflow-y:hidden;
+}
+section{
+    min-width: 100%;
+}
+.container .rect .title{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #394289;
 }
 .nav{
     font-size: 20px;
@@ -58,17 +72,7 @@ ul{
 .nav ul.nav-menu{
     flex: 1;
 }
-.Text{
-    margin-top: 10px;
-    font-size: 20px;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;    
-    width: 100%;
-    padding: 10px;
-}
+
 .nav-menu{
     display: block;
     position: relative;    
@@ -102,12 +106,9 @@ ul{
         transform: translateX(0px);
     }
 }
-.container .title{
-    font-size: 20px;
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;    
-    width: 90%;
-    padding: 10px;
-}
+body{
+    overflow-y:hidden;
+    }
+
+    
+
