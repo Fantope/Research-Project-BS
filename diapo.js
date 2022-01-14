@@ -21,11 +21,8 @@ function getCurrentPanelIndex() {
 
 container.onclick = e => {
 	const panels = getPanels()
-	const currentPanelIndex = getCurrentPanelIndex()
-	if (panels.length == currentPanelIndex + 1) {
-		// Last panel
-	} else {
-		container.scrollLeft = panels[currentPanelIndex + 1].offsetLeft - container.offsetLeft
-	}
+	const nextPanelIndex = getCurrentPanelIndex() + 1
+	if (panels.length == nextPanelIndex) location.replace("./index.html")
+	else container.scrollLeft = panels[nextPanelIndex].offsetLeft - container.offsetLeft
 }
 
