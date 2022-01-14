@@ -5,6 +5,7 @@
     align-items: center;
     height: 30px;
     padding: 15px 0;
+    margin-top: 10px;
 }
 
 .menuNav-main ul {
@@ -22,16 +23,20 @@
 .menuNav-panel{
     display: block;
     position: relative;    
-    background: #39428996;
+    background: rgb(39, 94, 94);
+    border: 2px solid rgb(247, 255, 255);
+    border-top: 1px solid rgb(39, 94, 94);
+    margin-bottom: -2px;
     width: 500px;
-    transform:translateY(-50px);
+    transform:translateY(-65px);
     transition: transform .3s ease-in-out;
 }
 .menuNav-panel.show{
-    transform: translateY(0px);
+    transform: translateY(-10px);
 }
 
 .menuNav-panel a:hover{
+    padding-bottom: 4px;
     border-bottom: 2px solid white;
 }
 .menuNav-panel-right{
@@ -50,6 +55,3 @@
 }
 
 /************ *****************/
-.menuNav-cog {
-	
-}

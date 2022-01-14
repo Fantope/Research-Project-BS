@@ -9,7 +9,7 @@ const ul_menuPanel = document.createElement("ul")
 nav_menu.appendChild(ul_menuPanel)
 ul_menuPanel.className = "menuNav-panel" // "nav-menu"
 
-createMenuItem("Inicio", "./index.html")
+createMenuItem("Quienes somos?", "./index.html")
 createMenuItem("Lectura de Numeros", "./LecturaN.html")
 
 function createMenuItem(name, href="#") {
