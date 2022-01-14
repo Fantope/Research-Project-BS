@@ -28,11 +28,6 @@ ul{
     margin: auto;
 }
 
-
-
-hr{
-    margin-bottom: 10px;
-}
 .container .title{
     font-size: 20px;
     display: flex;
@@ -43,6 +38,10 @@ hr{
     width: 100%;
     padding: 10px;
     transform: translateY(-10px);
+}
+.title {
+    margin-top: 10px;
+    border-top: 2px solid #fff;
 }
 /*  NERF  */ 
 
