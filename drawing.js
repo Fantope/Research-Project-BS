@@ -7,19 +7,20 @@ ctx1.lineJoin = ctx1.lineCap = "round";
 limpiar()
 
 let pastMouse = null;
-canvas.onmouseleave = () => pastMouse = null
+canvas.ontouchend = canvas.onmouseleave = () => pastMouse = null
 document.addEventListener("mouseup", canvas.onmouseleave)
 document.oncontextmenu = e => e.preventDefault()
 
-canvas.onmousemove = e => {
+canvas.ontouchmove = canvas.onmousemove = e => {
+	const currentPos = e.touches? [e.touches[0].pageX - canvas.getBoundingClientRect().left, e.touches[0].pageY - canvas.getBoundingClientRect().top] : [e.offsetX, e.offsetY]
+	
 	if (pastMouse) {
-		if (e.buttons & 1) {
+		if (e.buttons & 1 ||  e.touches) {
 			ctx1.strokeStyle = "#000";
 			ctx1.lineWidth = 8 * 2;
 			ctx1.beginPath()
 			ctx1.moveTo(...pastMouse)
-			pastMouse = [e.offsetX, e.offsetY]
-			ctx1.lineTo(...pastMouse)
+			ctx1.lineTo(...currentPos)
 			ctx1.stroke()
 		}
 		else if (e.buttons & 2) {
@@ -27,12 +28,13 @@ canvas.onmousemove = e => {
 			ctx1.lineWidth = 8 * 3;
 			ctx1.beginPath()
 			ctx1.moveTo(...pastMouse)
-			pastMouse = [e.offsetX, e.offsetY]
-			ctx1.lineTo(...pastMouse)
+			ctx1.lineTo(...currentPos)
 			ctx1.stroke()
 		}
 	}
-	pastMouse = [e.offsetX, e.offsetY]
+	pastMouse = currentPos
+	// console.log(e)
+	e.preventDefault()
 }
 
 function limpiar() {
