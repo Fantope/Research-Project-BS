@@ -23,21 +23,18 @@
             <i>Dibuja el numero en grande y en el centro del cuadrado para que haga mejor la predicción.</i>
         </div>
         <div class="Recuadro">
-            <canvas id="BigCanvas" width="200" height="200"></canvas>
+            <canvas id="BigCanvas" width="224" height="224"></canvas>
             <canvas id="SmallCanvas" width="28" height="28" style="display: none"></canvas>
-
         </div>
         <div class="BotonesLec">
             <button id="limpiar" onclick="limpiar()">Limpiar</button>
-            <button id="predecir" onclick="predecir()">Predecir</button>
-            <button id="guardar" onclick="guardar()">Guardar</button>
+            <!-- <button id="guardar" onclick="guardar()">Guardar</button> -->
             <div id="resultado"></div>
         </div>
         <div id="guardado"></div>
     </div>
     <script src="./libs/bootstrap.min.js"></script>
     <script src="./libs/tensorflow.min.js"></script>
-    <script src="./libs/fabric.min.js"></script>
     <script src="./drawing.js"></script>
     <script src="./LecturaN.js"></script>
 </body>

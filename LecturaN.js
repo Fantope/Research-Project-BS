@@ -1,26 +1,18 @@
 var modelo = null;
 
 //Tomar y configurar el canvas
-var canvas = document.getElementById("BigCanvas");
-var ctx1 = canvas.getContext("2d");
 var smallcanvas = document.getElementById("SmallCanvas");
 var ctx2 = smallcanvas.getContext("2d");
 
-function limpiar() {
-	ctx1.clearRect(0, 0, canvas.width, canvas.height);
-	drawingcanvas.clear();
-	document.getElementById("resultado").innerHTML = "";
-}
-
-function predecir() {
+async function predecir() {
 	//Pasar canvas a version 28x28
 	resample_single(canvas, 28, 28, smallcanvas);
 
 	var imgData = ctx2.getImageData(0, 0, 28, 28);
 	var arr = []; //El arreglo completo
 	var arr28 = []; //Al llegar a 28 posiciones se pone en 'arr' como un nuevo indice
-	for (var p = 0, i = 0; p < imgData.data.length; p += 4) {
-		var valor = imgData.data[p + 3] / 255;
+	for (var p = 0; p < imgData.data.length; p += 4) {
+		var valor = 1 - imgData.data[p] / 255;
 		arr28.push([valor]); //Agregar al arr28 y normalizar a 0-1. Aparte queda dentro de un arreglo en el indice 0... again
 		if (arr28.length == 28) {
 			arr.push(arr28);
@@ -30,11 +22,9 @@ function predecir() {
 
 	arr = [arr]; //Meter el arreglo en otro arreglo por que si no tio tensorflow se enoja >:(
 	//Nah basicamente Debe estar en un arreglo nuevo en el indice 0, por ser un tensor4d en forma 1, 28, 28, 1
-	var tensor4 = tf.tensor4d(arr);
-	var resultados = modelo.predict(tensor4).dataSync();
-	var mayorIndice = resultados.indexOf(Math.max.apply(null, resultados));
-
-	console.log("Prediccion", mayorIndice);
+	const tensor4 = tf.tensor4d(arr);
+	const resultados = await modelo.predict(tensor4).data();
+	const mayorIndice = resultados.indexOf(Math.max.apply(null, resultados));
 	document.getElementById("resultado").innerHTML = mayorIndice;
 }
 
@@ -135,9 +125,12 @@ function resample_single(canvas, width, height, resize_canvas) {
 
 //Cargar modelo
 (async () => {
-	console.log("Cargando modelo...");
 	modelo = await tf.loadLayersModel("./rsc/model.json");
-	console.log("Modelo cargado...");
+	const predictLoop = async () => {
+		await predecir()
+		setTimeout(predictLoop, 100)
+	}
+	predictLoop();
 })();
 
 function guardar() {
