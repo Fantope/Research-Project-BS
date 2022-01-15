@@ -13,7 +13,7 @@ document.oncontextmenu = e => e.preventDefault()
 
 canvas.ontouchmove = canvas.onmousemove = e => {
 	const currentPos = e.touches? [e.touches[0].pageX - canvas.getBoundingClientRect().left, e.touches[0].pageY - canvas.getBoundingClientRect().top] : [e.offsetX, e.offsetY]
-	
+	console.log(e)
 	if (pastMouse) {
 		if (e.buttons & 1 ||  e.touches) {
 			ctx1.strokeStyle = "#000";

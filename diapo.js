@@ -19,10 +19,15 @@ function getCurrentPanelIndex() {
 	return currentPanelIndex
 }
 
-container.onclick = e => {
+container.oncontextmenu = e => e.preventDefault()
+container.onmousedown = e => {
 	const panels = getPanels()
-	const nextPanelIndex = getCurrentPanelIndex() + 1
-	if (panels.length == nextPanelIndex) location.replace("./index.html")
-	else container.scrollLeft = panels[nextPanelIndex].offsetLeft - container.offsetLeft
+	const currentPanelIndex = getCurrentPanelIndex()
+	if (e.buttons & 1) {
+		if (panels.length == currentPanelIndex + 1) location.replace("./index.html")
+		else container.scrollLeft = panels[currentPanelIndex + 1].offsetLeft - container.offsetLeft
+	} if ((e.buttons & 2) && currentPanelIndex > 0) {
+		container.scrollLeft = panels[currentPanelIndex - 1].offsetLeft - container.offsetLeft
+	}
 }
 
