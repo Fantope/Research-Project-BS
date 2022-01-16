@@ -11,7 +11,7 @@ ul_menuPanel.className = "menuNav-panel" // "nav-menu"
 
 createMenuItem("Quienes somos?", "./index.html")
 createMenuItem("Lectura de Numeros", "./LecturaN.html")
-createMenuItem("Objectivos", "./objetivos.html")
+createMenuItem("Objetivos", "./objetivos.html")
 
 function createMenuItem(name, href="#") {
     const li = document.createElement("li")
