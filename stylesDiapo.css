@@ -12,9 +12,47 @@
     scroll-behavior: smooth;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .diapo-panel {
-    position: relative;
+    /* position: relative; */
     flex-shrink: 0;
     width: 100%;
     height: 100%;
+}
+
+.diapo-image {
+    width: 100%;
+    height: 100%;
+    background: #fff no-repeat center center;
+    background-size: contain;
+}
+
+.diapo-title {
+    width: 100%;
+    font-size: 220%;
+    padding: 5%;
+    text-align: center;
+}
+
+.diapo-text {
+    width: 100%;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+}
+.diapo-text-left {
+    width: 100%;
+    font-size: 170%;
+    padding: 2%;
+    text-align: left;
 }
