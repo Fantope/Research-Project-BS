@@ -43,6 +43,14 @@ ul{
     margin-top: 10px;
     border-top: 2px solid #fff;
 }
+.container .text {
+    background-color:rgba(40, 29, 139, 0.5) ;
+    height: 80%;
+}
+.container .text h2{
+    font-size: 32px;
+    padding-top: 5%;
+}
 /*  NERF  */ 
 
 .Principal {
